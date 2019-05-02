@@ -12,8 +12,8 @@ const Modal = props => {
     );
 };
 
-export default React.memo(Modal, (prevProps, nextProps)=> {
-    return prevProps.show === nextProps.show;
+export default React.memo(Modal, (prevProps, nextProps) => {
+    return prevProps.show === nextProps.show && prevProps.children === nextProps.children;
 });
 
 // alternativa
@@ -22,7 +22,7 @@ export default React.memo(Modal, (prevProps, nextProps)=> {
 //     shouldComponentUpdate(nextProps, nextState) {
 //         return nextProps.show !== this.props.show;
 //     }
-    
+
 //     render() {
 //         const className = `${classes.Modal} ${this.props.show ? classes.Show : classes.Hide}`;
 
